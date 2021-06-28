@@ -1,5 +1,5 @@
 //By lucassobreiro
-//Apr 2021
+//28 Jun 2021
 
 #include <SFML/Graphics.hpp>
 #include <time.h>
@@ -21,14 +21,14 @@ int main(){
 	srand(time(NULL));
 
 	//Window
-	RenderWindow window(VideoMode(RESX, RESY), "BG_Stars", Style::Fullscreen);
+	RenderWindow window(VideoMode(RESX, RESY), "BG_Stars", Style::Close);
 	window.setVerticalSyncEnabled(true);
 	window.setMouseCursorVisible(false);
 	window.setKeyRepeatEnabled(false);
 
 	//Star
 	Texture starTex;
-	if(!starTex.loadFromFile("star.png")){
+	if(!starTex.loadFromFile("Resources/star.png")){
 		return -1;
 	}
 	RectangleShape starRec[STARLIMIT];
@@ -42,7 +42,7 @@ int main(){
 
 	//Background
 	Texture bg;
-	if(!bg.loadFromFile("background.png")){
+	if(!bg.loadFromFile("Resources/background.png")){
 		return -1;
 	}
 	Sprite bg_spr;
